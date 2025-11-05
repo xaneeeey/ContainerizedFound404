@@ -1,0 +1,16 @@
+version: '3.9'
+
+services:
+  found404:
+    build:
+      context: .
+      containerfile: Containerfile
+    image: found404
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/app
+      - /app/node_modules
+    environment:
+      - NODE_ENV=development
+
